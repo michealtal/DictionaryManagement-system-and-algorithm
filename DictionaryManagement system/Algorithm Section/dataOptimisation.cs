@@ -37,7 +37,7 @@ namespace DictionaryManagement_system.Algorithm_Section
                 }
             }
 
-            while(nonZeroIndex < nums.Length)
+            while (nonZeroIndex < nums.Length)
             {
                 nums[nonZeroIndex] = 0;
                 nonZeroIndex++;
@@ -97,7 +97,7 @@ namespace DictionaryManagement_system.Algorithm_Section
 
         public Dictionary<char, int> HowManyTimesCharAppered(string str)
         {
-            Dictionary<char,int> charCount = new Dictionary<char,int>();
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
             foreach (char c in str)
             {
                 if (charCount.ContainsKey(c))
@@ -112,8 +112,47 @@ namespace DictionaryManagement_system.Algorithm_Section
             return charCount;
         }
 
+        //public int[] FindIntersection(int[] arr1, int[] arr2)
+        //{
+        //    HashSet<int> set1 = new HashSet<int>(arr1);
+        //    HashSet<int> intersection = new HashSet<int>();
+        //    foreach (int num in arr2)
+        //    {                                            //WORK IF DUPLICATE IS NOT NEEDED
+        //        if (set1.Contains(num))
+        //        {
+        //            intersection.Add(num);
+        //        }
+        //    }
+        //    return intersection.ToArray();
+        //}
+
+        public int[] FindIntersection(int[] arr1, int[] arr2)
+        {
+            Dictionary<int, int> map = new Dictionary<int, int>();
+            List<int> result = new List<int>();
+
+            // Count frequency of each number in arr1
+            foreach (int num in arr1)
+            {
+                if (map.ContainsKey(num))
+                    map[num]++;
+                else
+                    map[num] = 1;
+            }
+
+            // Check for common numbers in arr2
+            foreach (int num in arr2)
+            {
+                if (map.ContainsKey(num) && map[num] > 0)
+                {
+                    result.Add(num);
+                    map[num]--; // decrease frequency
+                }
+            }
+
+            return result.ToArray();
+        }
+
+
     }
-
-
-
 };

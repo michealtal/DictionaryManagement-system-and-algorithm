@@ -103,6 +103,10 @@ namespace DictionaryManagement_system
             {
                 Console.WriteLine($"{kvp.Key} -> {kvp.Value}");
             }
+
+            int[] Intersection =dataOpt.FindIntersection(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
+            Console.WriteLine("Intersection: " + string.Join(", ", Intersection));
         }
     }
 }
+ 
