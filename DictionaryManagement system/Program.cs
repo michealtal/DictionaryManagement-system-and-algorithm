@@ -106,6 +106,10 @@ namespace DictionaryManagement_system
 
             int[] Intersection =dataOpt.FindIntersection(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
             Console.WriteLine("Intersection: " + string.Join(", ", Intersection));
+
+            int[] numberss= { 1, 2, 7, 3, 4, 9, 5 };
+            int SecondLargest = dataOpt.FindSecondLargest(numberss);
+            Console.WriteLine("Second Largest: " + SecondLargest);
         }
     }
 }

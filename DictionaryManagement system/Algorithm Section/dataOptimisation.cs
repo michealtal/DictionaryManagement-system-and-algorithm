@@ -153,6 +153,28 @@ namespace DictionaryManagement_system.Algorithm_Section
             return result.ToArray();
         }
 
+        public int FindSecondLargest(int[] nums)
+        {
+            int FirstMax = int.MinValue;
+            int SecondMax = int.MinValue;
+            foreach (int n in nums)
+            {
+                if (n > FirstMax)
+                {
+                    SecondMax = FirstMax;
+                    FirstMax = n;
+                  
+                }
+                else if (n > SecondMax && n < FirstMax)
+                {
+                    SecondMax = n;
+                }
+            }
+            return SecondMax == int.MinValue? -1 : SecondMax;
+
+        }
+
+          
 
     }
 };
