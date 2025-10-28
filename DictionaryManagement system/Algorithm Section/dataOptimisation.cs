@@ -163,18 +163,42 @@ namespace DictionaryManagement_system.Algorithm_Section
                 {
                     SecondMax = FirstMax;
                     FirstMax = n;
-                  
+
                 }
                 else if (n > SecondMax && n < FirstMax)
                 {
                     SecondMax = n;
                 }
             }
-            return SecondMax == int.MinValue? -1 : SecondMax;
+            return SecondMax == int.MinValue ? -1 : SecondMax;
 
         }
+        public int FirstUniqChar(string s)
+        {
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
 
-          
+            //count each chracter
+            foreach (char c in s)
+            {
+                if (charCount.ContainsKey(c))
+                {
+                    charCount[c]++;
+                }
+                else
+                {
+                    charCount[c] = 1;
+                }
+            }
 
+                // Find the first chracter with count 1
+                for (int i=0; i < s.Length; i++)
+                {
+                    if (charCount[s[i]]==1)
+                     return i;    
+                }
+
+                return -1;
+
+        }
     }
 };

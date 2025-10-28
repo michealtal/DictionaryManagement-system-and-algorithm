@@ -110,6 +110,9 @@ namespace DictionaryManagement_system
             int[] numberss= { 1, 2, 7, 3, 4, 9, 5 };
             int SecondLargest = dataOpt.FindSecondLargest(numberss);
             Console.WriteLine("Second Largest: " + SecondLargest);
+
+            int FirstUniqChar = dataOpt.FirstUniqChar("leetcodelet");
+           Console.WriteLine("First Unique Character Index: " + FirstUniqChar);
         }
     }
 }
