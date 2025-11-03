@@ -113,6 +113,9 @@ namespace DictionaryManagement_system
 
             int FirstUniqChar = dataOpt.FirstUniqChar("leetcodelet");
            Console.WriteLine("First Unique Character Index: " + FirstUniqChar);
+
+            string anotherPaliandrom = dataOpt.isPaliandrome("leel");
+            Console.WriteLine(anotherPaliandrom);
         }
     }
 }

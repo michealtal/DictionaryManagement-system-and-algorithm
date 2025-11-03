@@ -200,5 +200,21 @@ namespace DictionaryManagement_system.Algorithm_Section
                 return -1;
 
         }
+
+        public string isPaliandrome(string word)
+        {
+            int left = 0;
+            int right = word.Length - 1;
+            while (left < right)
+            {
+                if (word[left] != word[right])
+                {
+                    return "Not a Paliandrome";
+                }
+                left++;
+                right--;    
+            }
+            return "Is a Paliandrome";
+        }
     }
 };
