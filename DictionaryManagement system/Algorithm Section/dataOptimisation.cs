@@ -190,14 +190,14 @@ namespace DictionaryManagement_system.Algorithm_Section
                 }
             }
 
-                // Find the first chracter with count 1
-                for (int i=0; i < s.Length; i++)
-                {
-                    if (charCount[s[i]]==1)
-                     return i;    
-                }
+            // Find the first chracter with count 1
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (charCount[s[i]] == 1)
+                    return i;
+            }
 
-                return -1;
+            return -1;
 
         }
 
@@ -212,9 +212,35 @@ namespace DictionaryManagement_system.Algorithm_Section
                     return "Not a Paliandrome";
                 }
                 left++;
-                right--;    
+                right--;
             }
             return "Is a Paliandrome";
+        }
+
+
+        // functions that count consonant or vowels in a string
+
+        public (int vowels, int consonants) CountVowelsAndConsonants(string input)
+        {
+            int vowels = 0;
+            int consonants = 0;
+            string vowelsSet = "aeiou";
+
+            foreach (char c in input.ToLower())
+            {
+                if (char.IsLetter(c))
+                {
+                    if (vowelsSet.Contains(c))
+                    {
+                        vowels++;
+                    }
+                    else
+                    {
+                        consonants++;
+                    }
+                }
+            }
+            return (vowels, consonants);
         }
     }
 };

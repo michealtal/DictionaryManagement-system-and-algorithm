@@ -116,6 +116,9 @@ namespace DictionaryManagement_system
 
             string anotherPaliandrom = dataOpt.isPaliandrome("leel");
             Console.WriteLine(anotherPaliandrom);
+
+            var (vowellCount, consonantCount) = dataOpt.CountVowelsAndConsonants("Hello World");
+            Console.WriteLine($"Vowels: {vowelCount}, Consonants: {consonantCount}");
         }
     }
 }
